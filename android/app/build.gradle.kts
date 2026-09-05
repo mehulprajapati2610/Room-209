@@ -42,8 +42,9 @@ android {
         }
         create("prod") {
             dimension = "environment"
-            buildConfigField("String", "BACKEND_BASE_URL", "\"https://room209-backend.onrender.com/api/v1/\"")
-            buildConfigField("String", "WS_BASE_URL", "\"wss://room209-backend.onrender.com/ws-room\"")
+            // Local PC IP: 192.168.0.41 (Change if your IP is different)
+            buildConfigField("String", "BACKEND_BASE_URL", "\"http://192.168.0.41:8080/api/v1/\"")
+            buildConfigField("String", "WS_BASE_URL", "\"ws://192.168.0.41:8080/ws-room\"")
         }
     }
 
