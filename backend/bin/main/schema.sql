@@ -1,0 +1,96 @@
+-- Room 209 PostgreSQL DDL Schema
+
+CREATE TABLE IF NOT EXISTS rooms (
+    id BIGSERIAL PRIMARY KEY,
+    room_number VARCHAR(50) NOT NULL UNIQUE,
+    name VARCHAR(100) NOT NULL,
+    quiet_hours_start TIME,
+    quiet_hours_end TIME,
+    quiet_hours_enabled BOOLEAN DEFAULT TRUE
+);
+
+CREATE TABLE IF NOT EXISTS users (
+    id BIGSERIAL PRIMARY KEY,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    bed_number VARCHAR(50),
+    room_role VARCHAR(50),
+    presence_status VARCHAR(50) NOT NULL DEFAULT 'IN_ROOM',
+    avatar_url VARCHAR(500),
+    fcm_token VARCHAR(500),
+    room_id BIGINT REFERENCES rooms(id) ON DELETE SET NULL
+);
+
+CREATE TABLE IF NOT EXISTS posts (
+    id BIGSERIAL PRIMARY KEY,
+    room_id BIGINT NOT NULL REFERENCES rooms(id) ON DELETE CASCADE,
+    author_id BIGINT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    category VARCHAR(50) NOT NULL DEFAULT 'CHIT_CHAT',
+    content TEXT NOT NULL,
+    media_url VARCHAR(500),
+    likes_count INT DEFAULT 0,
+    created_at TIMESTAMP WITHOUT TIME ZONE NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS comments (
+    id BIGSERIAL PRIMARY KEY,
+    post_id BIGINT NOT NULL REFERENCES posts(id) ON DELETE CASCADE,
+    author_id BIGINT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    content TEXT NOT NULL,
+    created_at TIMESTAMP WITHOUT TIME ZONE NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS plans (
+    id BIGSERIAL PRIMARY KEY,
+    room_id BIGINT NOT NULL REFERENCES rooms(id) ON DELETE CASCADE,
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    scheduled_time TIMESTAMP WITHOUT TIME ZONE NOT NULL,
+    location VARCHAR(255),
+    status VARCHAR(50) NOT NULL DEFAULT 'UPCOMING',
+    created_by_id BIGINT NOT NULL REFERENCES users(id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS plan_rsvps (
+    id BIGSERIAL PRIMARY KEY,
+    plan_id BIGINT NOT NULL REFERENCES plans(id) ON DELETE CASCADE,
+    user_id BIGINT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    rsvp_status VARCHAR(50) NOT NULL DEFAULT 'ATTENDING',
+    CONSTRAINT uq_plan_user UNIQUE(plan_id, user_id)
+);
+
+CREATE TABLE IF NOT EXISTS chores (
+    id BIGSERIAL PRIMARY KEY,
+    room_id BIGINT NOT NULL REFERENCES rooms(id) ON DELETE CASCADE,
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    assigned_to_id BIGINT REFERENCES users(id) ON DELETE SET NULL,
+    due_date DATE,
+    completed BOOLEAN DEFAULT FALSE,
+    category VARCHAR(50) DEFAULT 'CLEANING'
+);
+
+CREATE TABLE IF NOT EXISTS polls (
+    id BIGSERIAL PRIMARY KEY,
+    room_id BIGINT NOT NULL REFERENCES rooms(id) ON DELETE CASCADE,
+    question VARCHAR(500) NOT NULL,
+    created_by_id BIGINT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    active BOOLEAN DEFAULT TRUE,
+    created_at TIMESTAMP WITHOUT TIME ZONE NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS poll_options (
+    id BIGSERIAL PRIMARY KEY,
+    poll_id BIGINT NOT NULL REFERENCES polls(id) ON DELETE CASCADE,
+    option_text VARCHAR(255) NOT NULL,
+    vote_count INT DEFAULT 0
+);
+
+CREATE TABLE IF NOT EXISTS poll_votes (
+    id BIGSERIAL PRIMARY KEY,
+    poll_id BIGINT NOT NULL REFERENCES polls(id) ON DELETE CASCADE,
+    option_id BIGINT NOT NULL REFERENCES poll_options(id) ON DELETE CASCADE,
+    user_id BIGINT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    CONSTRAINT uq_poll_user UNIQUE(poll_id, user_id)
+);

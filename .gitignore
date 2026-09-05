@@ -1,0 +1,50 @@
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Build artifacts
+build/
+dist/
+*.class
+*.jar
+*.war
+*.ear
+*.apk
+target/
+
+# Gradle
+.gradle/
+gradle-wrapper.jar
+*.gradle.kts.bak
+
+# Android
+.DS_Store
+local.properties
+android/.gradle
+android/build
+android/app/build
+android/.idea
+
+# Backend
+backend/.gradle
+backend/build
+backend/.idea
+backend/.DS_Store
+
+# Environment & Secrets
+.env
+.env.local
+firebase-service-account.json
+signing.properties
+release.keystore
+
+# Node (if added later)
+node_modules/
+npm-debug.log
+
+# OS
+Thumbs.db
+.DS_Store
