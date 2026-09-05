@@ -8,7 +8,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api/v1/media")
+@RequestMapping("/media")
 public class MediaController {
 
     private final CloudinaryService cloudinaryService;

@@ -42,5 +42,5 @@ firebase:
 logging:
   level:
     root: INFO
-    com.room209.backend: DEBUG
+    com.room209.backend: INFO
     org.hibernate: WARN

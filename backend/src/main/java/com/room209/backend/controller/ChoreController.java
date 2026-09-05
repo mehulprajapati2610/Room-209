@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/rooms/{roomId}/chores")
+@RequestMapping("/rooms/{roomId}/chores")
 public class ChoreController {
 
     private final ChoreService choreService;

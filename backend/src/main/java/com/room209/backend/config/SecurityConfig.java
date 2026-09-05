@@ -68,7 +68,8 @@ public class SecurityConfig {
             .csrf(csrf -> csrf.disable())
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/api/v1/auth/**").permitAll()
+                .requestMatchers("POST", "/auth/login", "/auth/register").permitAll()
+                .requestMatchers("/auth/**").permitAll()
                 .requestMatchers("/ws-room/**").permitAll()
                 .requestMatchers("/error").permitAll()
                 .anyRequest().authenticated()
