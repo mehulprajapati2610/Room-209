@@ -44,7 +44,7 @@ fun ShareFeedScreen(
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween,
-            verticalAlignment = Alignment.CenterVertizontally
+            verticalAlignment = Alignment.CenterVertically
         ) {
             Text(
                 text = "CANCEL",

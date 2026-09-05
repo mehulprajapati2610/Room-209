@@ -31,17 +31,16 @@ jobs:
         run: |
           if [ -f android/gradlew ]; then
             chmod +x android/gradlew
-          else
-            echo "gradlew not found, using gradle command"
           fi
 
-      - name: Build Release APK
+      - name: Build Release APK (prodRelease)
         working-directory: android
         run: |
+          export _JAVA_OPTIONS="-Xmx2048m"
           if [ -f gradlew ]; then
-            ./gradlew assembleRelease
+            ./gradlew assembleProdRelease
           else
-            gradle assembleRelease
+            gradle assembleProdRelease
           fi
 
       - name: Upload APK to Release

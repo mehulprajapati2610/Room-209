@@ -50,5 +50,5 @@ class ApiClient(private val context: Context) {
         .addConverterFactory(MoshiConverterFactory.create(moshi))
         .build()
 
-    val apiService: RoomApiService = retrofit.create(RoomApiService.javaClass)
+    val apiService: RoomApiService = retrofit.create(RoomApiService::class.java)
 }

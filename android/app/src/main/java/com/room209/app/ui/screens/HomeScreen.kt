@@ -81,7 +81,7 @@ fun HomeScreen(
                         .fillMaxWidth()
                         .padding(horizontal = 20.dp, vertical = 6.dp),
                     horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertizontally
+                    verticalAlignment = Alignment.CenterVertically
                 ) {
                     Text(
                         text = "RESIDENTS (${roommates.size})",
@@ -143,7 +143,7 @@ fun HomeScreen(
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertizontally
+                    verticalAlignment = Alignment.CenterVertically
                 ) {
                     Text(
                         text = "ANNOUNCEMENTS",
@@ -175,7 +175,7 @@ fun HomeScreen(
                             Row(
                                 modifier = Modifier.fillMaxWidth(),
                                 horizontalArrangement = Arrangement.SpaceBetween,
-                                verticalAlignment = Alignment.CenterVertizontally
+                                verticalAlignment = Alignment.CenterVertically
                             ) {
                                 Text(
                                     text = post.author.name.uppercase(),
@@ -210,7 +210,7 @@ fun HomeScreen(
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertizontally
+                    verticalAlignment = Alignment.CenterVertically
                 ) {
                     Text(
                         text = "CHORES & DUTIES",
@@ -239,11 +239,11 @@ fun HomeScreen(
                         WarmCard(modifier = Modifier.padding(bottom = 8.dp)) {
                             Row(
                                 modifier = Modifier.fillMaxWidth(),
-                                verticalAlignment = Alignment.CenterVertizontally,
+                                verticalAlignment = Alignment.CenterVertically,
                                 horizontalArrangement = Arrangement.SpaceBetween
                             ) {
                                 Row(
-                                    verticalAlignment = Alignment.CenterVertizontally,
+                                    verticalAlignment = Alignment.CenterVertically,
                                     modifier = Modifier.weight(1f)
                                 ) {
                                     // Checkbox box

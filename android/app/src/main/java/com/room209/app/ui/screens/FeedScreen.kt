@@ -105,10 +105,10 @@ fun FeedPostCard(
         // Author Row
         Row(
             modifier = Modifier.fillMaxWidth(),
-            verticalAlignment = Alignment.CenterVertizontally,
+            verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            Row(verticalAlignment = Alignment.CenterVertizontally) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
                 // Author Initials Avatar
                 Box(
                     modifier = Modifier
@@ -198,10 +198,10 @@ fun FeedPostCard(
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween,
-            verticalAlignment = Alignment.CenterVertizontally
+            verticalAlignment = Alignment.CenterVertically
         ) {
             Row(
-                verticalAlignment = Alignment.CenterVertizontally,
+                verticalAlignment = Alignment.CenterVertically,
                 modifier = Modifier.clickable { onLike() }
             ) {
                 Text(

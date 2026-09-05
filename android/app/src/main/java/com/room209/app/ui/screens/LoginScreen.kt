@@ -111,7 +111,7 @@ fun LoginScreen(
                         Row(
                             modifier = Modifier.fillMaxWidth(),
                             horizontalArrangement = Arrangement.SpaceBetween,
-                            verticalAlignment = Alignment.CenterVertizontally
+                            verticalAlignment = Alignment.CenterVertically
                         ) {
                             Column {
                                 Text(

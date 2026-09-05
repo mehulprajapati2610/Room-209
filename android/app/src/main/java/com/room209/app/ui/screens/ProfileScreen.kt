@@ -52,7 +52,7 @@ fun ProfileScreen(
                 .fillMaxWidth()
                 .padding(horizontal = 20.dp, vertical = 14.dp),
             horizontalArrangement = Arrangement.SpaceBetween,
-            verticalAlignment = Alignment.CenterVertizontally
+            verticalAlignment = Alignment.CenterVertically
         ) {
             Text(
                 text = "BACK",
@@ -77,7 +77,7 @@ fun ProfileScreen(
             // Profile Card
             item {
                 WarmCard {
-                    Row(verticalAlignment = Alignment.CenterVertizontally) {
+                    Row(verticalAlignment = Alignment.CenterVertically) {
                         Box(
                             modifier = Modifier
                                 .size(56.dp)
@@ -158,7 +158,7 @@ fun ProfileScreen(
                                 Row(
                                     modifier = Modifier.fillMaxWidth(),
                                     horizontalArrangement = Arrangement.SpaceBetween,
-                                    verticalAlignment = Alignment.CenterVertizontally
+                                    verticalAlignment = Alignment.CenterVertically
                                 ) {
                                     Text(
                                         text = label,
@@ -194,7 +194,7 @@ fun ProfileScreen(
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.SpaceBetween,
-                        verticalAlignment = Alignment.CenterVertizontally
+                        verticalAlignment = Alignment.CenterVertically
                     ) {
                         Column(modifier = Modifier.weight(1f)) {
                             Text(
@@ -223,7 +223,7 @@ fun ProfileScreen(
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.SpaceBetween,
-                        verticalAlignment = Alignment.CenterVertizontally
+                        verticalAlignment = Alignment.CenterVertically
                     ) {
                         Column(modifier = Modifier.weight(1f)) {
                             Text(

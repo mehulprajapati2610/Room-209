@@ -32,12 +32,12 @@ fun QuietHoursBanner(
             .padding(16.dp)
     ) {
         Row(
-            verticalAlignment = Alignment.CenterVertizontally,
+            verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceBetween,
             modifier = Modifier.fillMaxWidth()
         ) {
             Row(
-                verticalAlignment = Alignment.CenterVertizontally,
+                verticalAlignment = Alignment.CenterVertically,
                 modifier = Modifier.weight(1f)
             ) {
                 // Moon Icon Well

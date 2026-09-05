@@ -89,7 +89,7 @@ fun PlanCard(
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween,
-            verticalAlignment = Alignment.CenterVertizontally
+            verticalAlignment = Alignment.CenterVertically
         ) {
             Text(
                 text = plan.scheduledTime.uppercase(),
@@ -146,7 +146,7 @@ fun PlanCard(
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween,
-            verticalAlignment = Alignment.CenterVertizontally
+            verticalAlignment = Alignment.CenterVertically
         ) {
             Text(
                 text = "ARE YOU GOING?",

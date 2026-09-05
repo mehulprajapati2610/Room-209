@@ -25,7 +25,7 @@ fun RoomTopBar(
     onProfileClick: () -> Unit = {}
 ) {
     Row(
-        verticalAlignment = Alignment.CenterVertizontally,
+        verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween,
         modifier = Modifier
             .fillMaxWidth()
@@ -79,7 +79,7 @@ fun RoomBottomBar(
     ) {
         Row(
             modifier = Modifier.fillMaxSize(),
-            verticalAlignment = Alignment.CenterVertizontally,
+            verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceAround
         ) {
             // 1. Home
