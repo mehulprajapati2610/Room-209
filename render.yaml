@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: room209-backend
+    env: docker
+    plan: free
+    rootDir: backend
+    dockerfile: ./Dockerfile
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
+      - key: PORT
+        value: 8080
+    autoDeploy: true
