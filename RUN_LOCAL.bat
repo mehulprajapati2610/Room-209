@@ -15,11 +15,11 @@ echo.
 REM Navigate to backend
 cd /d "%~dp0\backend"
 
-REM Set Supabase connection string
-REM REPLACE WITH YOUR ACTUAL SUPABASE CONNECTION STRING!
-set DATABASE_URL=postgresql://postgres:YOUR_SUPABASE_PASSWORD@db.xxxxx.supabase.co:5432/postgres
+REM Set Supabase connection (using JDBC format with SSL for Supabase)
+REM REPLACE WITH YOUR ACTUAL SUPABASE CREDENTIALS!
+set DATABASE_URL=jdbc:postgresql://db.aokmhgciexlsdlaytlxf.supabase.co:5432/postgres?sslmode=require
 set DATABASE_USER=postgres
-set DATABASE_PASSWORD=YOUR_SUPABASE_PASSWORD
+set DATABASE_PASSWORD=Room-209Mehul
 set SPRING_PROFILES_ACTIVE=default
 set FIREBASE_ENABLED=false
 

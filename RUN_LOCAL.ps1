@@ -14,11 +14,11 @@ Write-Host ""
 # Navigate to backend
 Set-Location "$PSScriptRoot\backend"
 
-# Set Supabase connection
+# Set Supabase connection (using JDBC format with SSL for Supabase)
 # REPLACE WITH YOUR ACTUAL SUPABASE CREDENTIALS!
-$env:DATABASE_URL = "postgresql://postgres:YOUR_SUPABASE_PASSWORD@db.xxxxx.supabase.co:5432/postgres"
+$env:DATABASE_URL = "jdbc:postgresql://db.aokmhgciexlsdlaytlxf.supabase.co:5432/postgres?sslmode=require"
 $env:DATABASE_USER = "postgres"
-$env:DATABASE_PASSWORD = "YOUR_SUPABASE_PASSWORD"
+$env:DATABASE_PASSWORD = "Room-209Mehul"
 $env:SPRING_PROFILES_ACTIVE = "default"
 $env:FIREBASE_ENABLED = "false"
 
